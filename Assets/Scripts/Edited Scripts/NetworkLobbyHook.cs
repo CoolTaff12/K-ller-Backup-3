@@ -30,7 +30,6 @@ public class NetworkLobbyHook : LobbyHook
 
             characterInfo.playerName = lobby.name;
             characterInfo.name = characterInfo.playerName;
-            characterInfo.checkingTexture = lobby.playersTexture;
             characterInfo.color = lobby.playerColor;
             characterInfo.teamNumber = (lobby.setTeamNumber + 1);
             characterInfo.gameObject.GetComponent<NetworkCharacterInfo>().teamNumber = (lobby.setTeamNumber + 1);

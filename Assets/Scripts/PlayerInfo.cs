@@ -33,6 +33,7 @@ public class PlayerInfo : NetworkBehaviour {
 	private NetworkCharacterInfo netInfo;
 	private DodgeBallBehaviour ballInfo; //Script on the ball colliding with the player;
 
+
 	// Use this for initialization
 	void Start () {
 		gat = gameObject.GetComponent<GrabAndToss> ();
@@ -77,9 +78,9 @@ public class PlayerInfo : NetworkBehaviour {
 	//This will take the gameobjects AudioSource to switch the audioclips
 	public void PlaySound(int clip)
 	{
-		GetComponent<AudioSource>().clip = audioClips[clip];
-		GetComponent<AudioSource>().Play();
-	}
+        gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().clip = audioClips[clip];
+        gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().Play();
+    }
 
 /// <summary>
 /// Command to spawn a ball to simulate the player dropping their head.
@@ -138,14 +139,15 @@ public class PlayerInfo : NetworkBehaviour {
 		gameObject.GetComponent<FirstPersonController> ().m_RunSpeed = 30;
 		gameObject.GetComponent<FirstPersonController> ().m_WalkSpeed = 15;
 		gameObject.GetComponent<FirstPersonController> ().m_JumpSpeed = 0;
-		gameObject.GetComponent<FirstPersonController> ().m_GravityMultiplier = 0;
+        gameObject.GetComponent<FirstPersonController>().m_GravityMultiplier = 0;
+        PlaySound(Random.Range(0,2));
 		Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 		rb.detectCollisions = false;
 		rb.useGravity = false;
 		rb.Sleep ();
 		deathMessage.SetActive (true);
 		foreach(GameObject gos in bodyparts){
-			gos.GetComponent<Renderer> ().material.mainTexture = mat;
+			//gos.GetComponent<Renderer> ().material.mainTexture = mat;
 			gos.layer = 10;
 		}
         gameObject.layer = 10;

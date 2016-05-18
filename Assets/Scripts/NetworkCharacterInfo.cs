@@ -20,10 +20,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
     public int teamNumber;
 
     [SyncVar]
-    public Texture playertexture;
-    public Texture[] selectableTextures;
-    [SyncVar]
-    public int checkingTexture;
+    public int checkingTexture = 1;
     public int checkingPlayers;
 
     public int[] Teams;
@@ -86,34 +83,24 @@ public class NetworkCharacterInfo : NetworkBehaviour
         //Tells the player what its name is
         gameObject.name = playerName;
         //Renderar the colour and the texture player had choosen ealier
-        Renderer[] CRends = GetComponentsInChildren<Renderer>();
-        if(checkingTexture == 1)
-        {
-            playertexture = selectableTextures[0];
-        }
-        if (checkingTexture == 2)
-        {
-            playertexture = selectableTextures[1];
-        }
-        if (checkingTexture == 3)
-        {
-            playertexture = selectableTextures[2];
-        }
-        Color headcolor = GameObject.Find(this.gameObject.name + "/Body/regular_dude_body").GetComponent<Renderer>().material.color;
-        foreach (Renderer r in CRends)
-        {
-            r.material.mainTexture = playertexture;
-            r.material.color = color;
-        }
-        GameObject.Find(this.gameObject.name + "/Body/regular_dude_head").GetComponent<Renderer>().material.color = headcolor;
-        //Two Materials
-        /*     GameObject.Find(this.gameObject.name + "/Body/regular_dude_right_hand").GetComponent<Renderer>().material.color = headcolor;
-             GameObject.Find(this.gameObject.name + "/Body/regular_dude_right_hand").GetComponent<Renderer>().material.color = headcolor;*/
     }
 
     void Update()
-    {
-        if(checkingPlayers > 0)
+    {   
+        //Renderar the colour and the texture player had choosen ealier
+        if(checkingTexture > 0)
+        {
+            foreach (Material matt in GameObject.Find(this.gameObject.name + "/player_with_armor").GetComponent<Renderer>().materials)
+            {
+                if (matt.name == "Armor2 (Instance)")
+                {
+                    Debug.Log("I'm here");
+                    matt.color = color;
+                    checkingTexture--;
+                }
+            }
+        }
+        if (checkingPlayers > 0)
         {
             GameObject[] AvalibleEntries = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject NewPlayer in AvalibleEntries)

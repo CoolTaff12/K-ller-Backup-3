@@ -350,7 +350,6 @@ namespace UnityStandardAssets.Network
 
             playerColor = Colors[idx];
             setTeamNumber = idx;
-            Debug.Log("Number of set team is " + setTeamNumber);
         }
 
         [Command]
