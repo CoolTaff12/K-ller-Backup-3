@@ -84,7 +84,7 @@ namespace UnityStandardAssets.Network
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
-            if (SceneManager.GetSceneAt(0).name == lobbyScene)
+            if (SceneManager.GetSceneAt(1).name == lobbyScene)
             {
                 if (topPanel.isInGame)
                 {
