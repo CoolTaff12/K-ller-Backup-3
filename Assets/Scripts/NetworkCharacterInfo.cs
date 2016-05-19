@@ -20,10 +20,10 @@ public class NetworkCharacterInfo : NetworkBehaviour
     public int teamNumber;
 
     [SyncVar]
-    public int checkingTexture = 1;
+    public int checkingTexture = 6;
     public int checkingPlayers;
 
-    public int[] Teams;
+    public GameObject[] ChoosenMaterials;
     public List<GameObject> Team1;
     public List<GameObject> Team2;
     public List<GameObject> Team3;
@@ -60,7 +60,6 @@ public class NetworkCharacterInfo : NetworkBehaviour
 
     void Awake()
     {
-        Teams = new int[10];
         Team1 = new List<GameObject>();
         Team2 = new List<GameObject>();
         Team3 = new List<GameObject>();
@@ -90,13 +89,16 @@ public class NetworkCharacterInfo : NetworkBehaviour
         //Renderar the colour and the texture player had choosen ealier
         if(checkingTexture > 0)
         {
-            foreach (Material matt in GameObject.Find(this.gameObject.name + "/player_with_armor").GetComponent<Renderer>().materials)
+            for(int i = 0; i < ChoosenMaterials.Length; i++)
             {
-                if (matt.name == "Armor2 (Instance)")
+                foreach (Material matt in ChoosenMaterials[i].GetComponent<Renderer>().materials)
                 {
-                    Debug.Log("I'm here");
-                    matt.color = color;
-                    checkingTexture--;
+                    if (matt.name == "Armor2 (Instance)")
+                    {
+                        Debug.Log("I'm here");
+                        matt.color = color;
+                        checkingTexture--;
+                    }
                 }
             }
         }

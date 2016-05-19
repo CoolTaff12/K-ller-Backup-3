@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &100082
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -257,6 +257,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &128810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 425630}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &133166
 GameObject:
   m_ObjectHideFlags: 1
@@ -397,7 +412,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &151570
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -862,7 +877,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &196972
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -948,16 +963,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196972}
-  m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.0018725055, y: -0.033739768, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.0056152344, y: -0.023437506, z: -0.13903809}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_Children:
   - {fileID: 444296}
   - {fileID: 479192}
   - {fileID: 464344}
-  m_Father: {fileID: 479326}
-  m_RootOrder: 4
+  m_Father: {fileID: 425630}
+  m_RootOrder: 2
 --- !u!4 &413322
 Transform:
   m_ObjectHideFlags: 1
@@ -1156,6 +1171,22 @@ Transform:
   - {fileID: 427662}
   m_Father: {fileID: 404316}
   m_RootOrder: 0
+--- !u!4 &425630
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.02592977, z: 0.04634603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 473202}
+  - {fileID: 467568}
+  - {fileID: 412456}
+  m_Father: {fileID: 479326}
+  m_RootOrder: 2
 --- !u!4 &426468
 Transform:
   m_ObjectHideFlags: 1
@@ -1343,15 +1374,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.026638603, y: -0.010190944, z: 0.097545825}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.07991028, y: 0.047210693, z: 0.15362549}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 406640}
   - {fileID: 495350}
   - {fileID: 472134}
-  m_Father: {fileID: 479326}
-  m_RootOrder: 3
+  m_Father: {fileID: 425630}
+  m_RootOrder: 1
 --- !u!4 &472092
 Transform:
   m_ObjectHideFlags: 1
@@ -1388,12 +1419,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.59, z: 0.142}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 7.8477936, z: 0.2869873}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 479326}
-  m_RootOrder: 2
+  m_Father: {fileID: 425630}
+  m_RootOrder: 0
 --- !u!4 &473862
 Transform:
   m_ObjectHideFlags: 1
@@ -1435,9 +1466,7 @@ Transform:
   m_Children:
   - {fileID: 442418}
   - {fileID: 22402988}
-  - {fileID: 473202}
-  - {fileID: 467568}
-  - {fileID: 412456}
+  - {fileID: 425630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &480742
@@ -1956,9 +1985,15 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   playerName: 
   teamNumber: 1
-  checkingTexture: 1
+  checkingTexture: 6
   checkingPlayers: 0
-  Teams: 
+  ChoosenMaterials:
+  - {fileID: 100082}
+  - {fileID: 117650}
+  - {fileID: 144328}
+  - {fileID: 186278}
+  - {fileID: 134096}
+  - {fileID: 189540}
   Team1: []
   Team2: []
   Team3: []
