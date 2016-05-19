@@ -17,10 +17,17 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	void Update () {
 	
 	}
-		
-	[Command]
+    [Command]
+    public void Cmd_SpawnColors(GameObject go)
+    {
+        go.GetComponent<NetworkCharacterInfo>().Rpc_SpawnColors();
+    }
+
+
+    [Command]
 	public void Cmd_KillAPlayer(GameObject go)
 	{
+        Debug.Log("CmD_KillAPlayer");
         go.GetComponent<PlayerInfo> ().Rpc_KillYourself ();
     }
 	/// <summary>

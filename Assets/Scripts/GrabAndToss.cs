@@ -40,10 +40,19 @@ public class GrabAndToss : NetworkBehaviour
 	private PlayerInfo playerInfo;
 	private NetworkCharacterInfo charInfo;
 
+    public AudioClip[] audioClips = null;
+
+    //-----------------Play Audio------------------------
+    //This will take the gameobjects AudioSource to switch the audioclips
+    public void PlaySound(int clip)
+    {
+        gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().clip = audioClips[clip];
+        gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().Play();
+    }
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
 		anim = GetComponent<Animator>();
 		playerInfo = gameObject.GetComponent<PlayerInfo> ();
@@ -116,7 +125,8 @@ public class GrabAndToss : NetworkBehaviour
 	public void Cmd_Shoot(GameObject bs, float force){
 		ballScript = bs.GetComponent<DodgeBallBehaviour> ();
 		ballScript.Rpc_Shoot (force);
-	}
+        PlaySound(Random.Range(0, 2));
+    }
 	/// <summary>
 	/// Command that requests the ball to get picked up.
 	/// </summary>

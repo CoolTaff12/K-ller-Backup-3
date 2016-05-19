@@ -41,6 +41,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
 
     public NetworkLobbyHook NLH;
     public UnityStandardAssets.Network.LobbyManager LM;
+    public AssignPlayerInfo API;
 
     public AudioClip[] audioClips;
 
@@ -78,6 +79,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
     {
         NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
+        API = GameObject.Find("PlayerInfoHandler").GetComponent<AssignPlayerInfo>();
         checkingPlayers = LM.PlayersOnline.Count;
         //Tells the player what its name is
         gameObject.name = playerName;
@@ -89,18 +91,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
         //Renderar the colour and the texture player had choosen ealier
         if(checkingTexture > 0)
         {
-            for(int i = 0; i < ChoosenMaterials.Length; i++)
-            {
-                foreach (Material matt in ChoosenMaterials[i].GetComponent<Renderer>().materials)
-                {
-                    if (matt.name == "Armor2 (Instance)")
-                    {
-                        Debug.Log("I'm here");
-                        matt.color = color;
-                        checkingTexture--;
-                    }
-                }
-            }
+            API.Cmd_SpawnColors(gameObject);
         }
         if (checkingPlayers > 0)
         {
@@ -121,6 +112,22 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    public void Rpc_SpawnColors()
+    {
+        for (int i = 0; i < ChoosenMaterials.Length; i++)
+        {
+            foreach (Material matt in ChoosenMaterials[i].GetComponent<Renderer>().materials)
+            {
+                if (matt.name == "Armor2 (Instance)" || matt.name == "Armor2")
+                {
+                    Debug.Log("I'm here");
+                    matt.color = color;
+                    checkingTexture--;
+                }
+            }
+        }
+    }
 
     public  void CheckAvailablePlayers()
     {

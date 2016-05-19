@@ -330,7 +330,7 @@ GameObject:
   - 114: {fileID: 11411176}
   m_Layer: 0
   m_Name: Main Character 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1461,7 +1461,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.2092, y: -1.6535916, z: 7.596779}
+  m_LocalPosition: {x: -22.830421, y: -0.5428072, z: 6.5873833}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2319,6 +2319,9 @@ MonoBehaviour:
   fpc: {fileID: 159110}
   head: {fileID: 107690}
   holdPos: {fileID: 190232}
+  audioClips:
+  - {fileID: 8300000, guid: ade2e7646157a7147b53038204d996b5, type: 3}
+  - {fileID: 8300000, guid: eef05885b2a15ab4daeacc0742b0fa8c, type: 3}
 --- !u!114 &11498154
 MonoBehaviour:
   m_ObjectHideFlags: 1

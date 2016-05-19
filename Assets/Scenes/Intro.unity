@@ -322,7 +322,7 @@ GameObject:
   - 114: {fileID: 1257008966}
   - 82: {fileID: 1257008967}
   m_Layer: 0
-  m_Name: RawImage
+  m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628e625e19dc8ab4ba1b3a86705a2bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timeduration: 0
 --- !u!82 &1257008967
 AudioSource:
   m_ObjectHideFlags: 0

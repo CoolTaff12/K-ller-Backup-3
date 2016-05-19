@@ -100,7 +100,8 @@ public class PlayerInfo : NetworkBehaviour {
 	public void Cmd_KillYourself(GameObject go){
 		infoHandler = GameObject.Find ("PlayerInfoHandler");
 		assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
-		assignInfo.Cmd_KillAPlayer(go);
+        assignInfo.Cmd_KillAPlayer(go);
+        Debug.Log("CmD_Killyourself");
 	}
 	/// <summary>
 	/// Command to take damage, starts Rpc_TakeDamage.
@@ -126,6 +127,7 @@ public class PlayerInfo : NetworkBehaviour {
 	[ClientRpc]
 	public void Rpc_KillYourself()
 	{
+        Debug.Log("Where is he`?");
         GameObject[] CharactersInfo = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject NCI in CharactersInfo)
         {

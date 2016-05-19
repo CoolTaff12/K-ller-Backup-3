@@ -19,7 +19,7 @@ public class VideoController : MonoBehaviour
 	void Update ()
     {
         Timeduration += (Time.deltaTime * 2);
-     if (Timeduration > 10f)
+     if (Timeduration > 9.5f)
         {
             SceneManager.LoadScene("NetworkLobby");
         }
