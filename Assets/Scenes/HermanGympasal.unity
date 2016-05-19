@@ -8462,16 +8462,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawningPositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 128249270}
+  - {fileID: 520475046}
+  - {fileID: 1861158443}
+  - {fileID: 1975535521}
+  - {fileID: 2058851021}
+  - {fileID: 1717404188}
+  - {fileID: 1342176590}
+  - {fileID: 104348488}
+  - {fileID: 512893312}
+  - {fileID: 1247545809}
+  - {fileID: 1823781148}
+  - {fileID: 1653472778}
+  - {fileID: 1813052824}
+  - {fileID: 932019330}
+  - {fileID: 188339017}
+  - {fileID: 1691259635}
+  - {fileID: 55251370}
+  - {fileID: 1597798026}
   respawns: []
 --- !u!65 &1853908178
 BoxCollider:
