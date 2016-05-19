@@ -1460,7 +1460,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 240.24397, y: 193.3966, z: 702.82556}
+  m_LocalPosition: {x: -36.2092, y: -1.6535916, z: 7.596779}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2241,18 +2241,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyparts:
+  - {fileID: 128810}
   - {fileID: 100082}
+  - {fileID: 151570}
   - {fileID: 117650}
   - {fileID: 144328}
+  - {fileID: 151848}
+  - {fileID: 140864}
+  - {fileID: 186278}
   - {fileID: 134096}
   - {fileID: 189540}
-  - {fileID: 110046}
-  - {fileID: 102948}
-  - {fileID: 174188}
-  - {fileID: 123180}
-  - {fileID: 159134}
   deathMessage: {fileID: 175840}
-  ballPrefab: {fileID: 163478, guid: 16a89774751f1f740a89d9192e74dc7b, type: 2}
+  ballPrefab: {fileID: 150818, guid: 1e5790ae5ad076e489e28b0a0fcae331, type: 2}
   body: {fileID: 175840}
   health: 1
   flySpeed: 4
@@ -2323,13 +2323,8 @@ MonoBehaviour:
   audioLis: {fileID: 8162976}
   bodyParts:
   - {fileID: 100082}
-  - {fileID: 117650}
-  - {fileID: 144328}
-  - {fileID: 134096}
-  - {fileID: 189540}
-  - {fileID: 110046}
-  - {fileID: 102948}
-  - {fileID: 190182}
+  - {fileID: 140864}
+  - {fileID: 186278}
 --- !u!137 &13704230
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

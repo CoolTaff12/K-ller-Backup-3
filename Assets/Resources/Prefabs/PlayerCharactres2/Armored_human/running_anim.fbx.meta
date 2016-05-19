@@ -85,7 +85,7 @@ ModelImporter:
     400074: //RootNode
     400076: spine1_j
     400078: spine2_j
-    7400000: Take 001
+    7400000: running new
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -109,7 +109,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: running new
       takeName: Take 001
       firstFrame: 0
       lastFrame: 120
