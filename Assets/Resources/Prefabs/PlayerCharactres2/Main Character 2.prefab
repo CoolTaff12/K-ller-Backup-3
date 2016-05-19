@@ -861,6 +861,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &190698
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419818}
+  m_Layer: 0
+  m_Name: ThrowFrom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &191178
 GameObject:
   m_ObjectHideFlags: 1
@@ -912,12 +927,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 1.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.11111107, y: 0.11111105, z: 0.11111111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 442418}
-  m_RootOrder: 0
+  m_Father: {fileID: 492954}
+  m_RootOrder: 1
 --- !u!4 &404316
 Transform:
   m_ObjectHideFlags: 1
@@ -1117,6 +1132,19 @@ Transform:
   - {fileID: 448610}
   m_Father: {fileID: 492954}
   m_RootOrder: 0
+--- !u!4 &419818
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.99, y: 0.714, z: 0.913}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 442418}
+  m_RootOrder: 1
 --- !u!4 &421102
 Transform:
   m_ObjectHideFlags: 1
@@ -1255,8 +1283,8 @@ Transform:
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 403332}
   - {fileID: 472092}
+  - {fileID: 419818}
   m_Father: {fileID: 479326}
   m_RootOrder: 0
 --- !u!4 &444296
@@ -1396,7 +1424,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 442418}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &472134
 Transform:
   m_ObjectHideFlags: 1
@@ -1461,7 +1489,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.830421, y: -0.5428072, z: 6.5873833}
+  m_LocalPosition: {x: 2.937665, y: 4.496, z: 8.751049}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1577,6 +1605,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: -3.2740998, y: 8.0501995, z: 15.8404}
   m_Children:
   - {fileID: 419520}
+  - {fileID: 403332}
   m_Father: {fileID: 419372}
   m_RootOrder: 1
 --- !u!4 &495188
@@ -1966,8 +1995,8 @@ MonoBehaviour:
     BobAmount: 0
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_Jump: 0
@@ -2007,10 +2036,12 @@ MonoBehaviour:
   Team10: []
   Victory: {fileID: 155782}
   TeamPlayers: []
+  infoHandler: {fileID: 0}
   NLH: {fileID: 0}
   LM: {fileID: 0}
+  API: {fileID: 0}
   audioClips:
-  - {fileID: 8300000, guid: a971d00c81efb174a82b7ca613dbe8e3, type: 3}
+  - {fileID: 0}
 --- !u!114 &11434536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2272,8 +2303,8 @@ MonoBehaviour:
   dead: 0
   mat: {fileID: 2800000, guid: f9cb50346a8027f40a0fe456ed3267b5, type: 3}
   audioClips:
-  - {fileID: 8300000, guid: e50aa662314f50b4ab4a410c17620700, type: 3}
-  - {fileID: 8300000, guid: da587fde069f42344bbc24403a91595e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11481724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2319,9 +2350,10 @@ MonoBehaviour:
   fpc: {fileID: 159110}
   head: {fileID: 107690}
   holdPos: {fileID: 190232}
+  throwFrom: {fileID: 190698}
   audioClips:
-  - {fileID: 8300000, guid: ade2e7646157a7147b53038204d996b5, type: 3}
-  - {fileID: 8300000, guid: eef05885b2a15ab4daeacc0742b0fa8c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11498154
 MonoBehaviour:
   m_ObjectHideFlags: 1

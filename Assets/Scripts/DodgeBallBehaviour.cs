@@ -98,6 +98,8 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 	/// </summary>
 	[ClientRpc]
 	public void Rpc_Shoot (float force){
+		pickedUp = false;
+		gameObject.transform.position = gat.c_ThrowFrom.transform.position;
 		bounces = 10;
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;
@@ -108,7 +110,6 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 		rb.AddForce(gat.c_Head.transform.forward * force);
 		gat = null;
         ParticlesAwareness.SetActive(true);
-        pickedUp = false;
 //		gameObject.layer = 0;
 	}
 

@@ -35,6 +35,9 @@ public class GrabAndToss : NetworkBehaviour
 	[SerializeField]
 	private GameObject holdPos  = null; //Position of the held ball.
 	public GameObject c_HoldPos{get{return holdPos;}}
+	[SerializeField]
+	private GameObject throwFrom  = null; //Position of the held ball.
+	public GameObject c_ThrowFrom{get{return throwFrom;}}
 //	[SerializeField]
 //	private GameObject fakeBall;
 	private PlayerInfo playerInfo;
