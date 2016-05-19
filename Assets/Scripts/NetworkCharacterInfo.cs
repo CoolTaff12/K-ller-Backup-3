@@ -78,6 +78,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
     // Use this for initialization
     void Start ()
     {
+		infoHandler = GameObject.Find("PlayerInfoHandler");
         NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
         checkingPlayers = LM.PlayersOnline.Count;
