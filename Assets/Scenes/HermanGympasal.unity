@@ -5122,30 +5122,15 @@ GameObject:
   - 4: {fileID: 1256193105}
   - 114: {fileID: 1256193104}
   - 114: {fileID: 1256193103}
-  - 114: {fileID: 1256193102}
   - 212: {fileID: 1256193107}
   - 114: {fileID: 1256193106}
   m_Layer: 0
-  m_Name: Ballspawner
+  m_Name: Balls Here!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1256193102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256193101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d2c7364b07ef84fb57063f83e8f91e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 163478, guid: 16a89774751f1f740a89d9192e74dc7b, type: 2}
-  objectName: BallSpawner
-  onlyOne: 1
+  m_IsActive: 1
 --- !u!114 &1256193103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,7 +5181,7 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!4 &1256193105
 Transform:
@@ -5205,7 +5190,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256193101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.74, y: 0, z: -28.01}
+  m_LocalPosition: {x: 2.16, y: 4.19, z: -29.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
