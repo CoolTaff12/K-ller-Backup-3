@@ -38,6 +38,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
     private GameObject Victory;
     [SerializeField]
     private List<GameObject> TeamPlayers;
+    public GameObject infoHandler; //PlayerInfoHandler found in scene.
 
     public NetworkLobbyHook NLH;
     public UnityStandardAssets.Network.LobbyManager LM;
@@ -79,7 +80,6 @@ public class NetworkCharacterInfo : NetworkBehaviour
     {
         NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
-        API = GameObject.Find("PlayerInfoHandler").GetComponent<AssignPlayerInfo>();
         checkingPlayers = LM.PlayersOnline.Count;
         //Tells the player what its name is
         gameObject.name = playerName;
@@ -91,7 +91,18 @@ public class NetworkCharacterInfo : NetworkBehaviour
         //Renderar the colour and the texture player had choosen ealier
         if(checkingTexture > 0)
         {
-            API.Cmd_SpawnColors(gameObject);
+            if(API == null)
+            {
+                if(infoHandler == null)
+                {
+                    infoHandler = GameObject.Find("PlayerInfoHandler");
+                }
+                API = infoHandler.GetComponent<AssignPlayerInfo>();
+            }
+            else
+            {
+                API.Cmd_SpawnColors(gameObject);
+            }
         }
         if (checkingPlayers > 0)
         {

@@ -127,7 +127,6 @@ public class PlayerInfo : NetworkBehaviour {
 	[ClientRpc]
 	public void Rpc_KillYourself()
 	{
-        Debug.Log("Where is he`?");
         GameObject[] CharactersInfo = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject NCI in CharactersInfo)
         {
