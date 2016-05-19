@@ -33,7 +33,7 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 	{
 		rb = gameObject.GetComponent<Rigidbody> ();
 		coll = gameObject.GetComponent<SphereCollider> ();
-		Physics.IgnoreLayerCollision (0, 10);
+		Physics.IgnoreLayerCollision (11, 10);
 		if (!isLocalPlayer) {
 			return;
 		}

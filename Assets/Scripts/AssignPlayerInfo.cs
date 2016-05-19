@@ -8,6 +8,8 @@ public class AssignPlayerInfo : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Physics.IgnoreLayerCollision (0, 10);
+		Physics.IgnoreLayerCollision (11, 10);
 	
 	}
 	
@@ -27,9 +29,17 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	/// <param name="go">Prefab of the object that should spawn.</param>
 	/// <param name="pos">spawnposition</param>
 	[Command]
-	public void Cmd_SpawnHead(GameObject go, GameObject pos)
+	public void Cmd_SpawnHead(GameObject go, GameObject pos, GameObject p)
 	{
 		GameObject HeadBall = Instantiate(go, pos.transform.position, Quaternion.identity) as GameObject;
+		foreach (Material matt in HeadBall.GetComponent<Renderer>().materials)
+		{
+			if (matt.name == "Armor (Instance)")
+			{
+				Debug.Log("I'm here");
+				matt.color = p.GetComponent<NetworkCharacterInfo>().color;
+			}
+		}
 //		HeadBall.GetComponent<Renderer> ().material.mainTexture = go.GetComponent<PlayerInfo>().bodyparts [0].GetComponent<Renderer> ().material.mainTexture;
 		NetworkServer.Spawn(HeadBall);
 	}

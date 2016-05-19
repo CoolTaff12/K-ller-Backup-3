@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1db7650a7f6d752448e02f74e82c67c8
-timeCreated: 1463582444
+guid: e27166a5b9d2cdb4a9c72ed29dbfb7fa
+timeCreated: 1463666084
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -8,84 +8,84 @@ ModelImporter:
     100000: breast_j
     100002: chin_j
     100004: head_tip_J
-    100006: l_thumb_base
-    100008: left_ankle_j
-    100010: left_ball_j
-    100012: left_clavical_j
-    100014: left_elbow_j
-    100016: left_hand_j
-    100018: left_hip_j
-    100020: left_knee_J
-    100022: left_mitten1_j
-    100024: left_mitten2_j
-    100026: left_mitten3_j
-    100028: left_shoulder_J
-    100030: left_thumb1_j
-    100032: left_thumb2_j
-    100034: left_thumb3_j
-    100036: left_toe_j
-    100038: neck_j
-    100040: r_thumb_base
-    100042: right_ankle_j
-    100044: right_ball_j
-    100046: right_clavical_j
-    100048: right_elbow_j
-    100050: right_hand_j
-    100052: right_hip_j
-    100054: right_knee_J
-    100056: right_mitten1_j
-    100058: right_mitten2_j
-    100060: right_mitten3_j
-    100062: right_shoulder_j
-    100064: right_thumb1_J
-    100066: right_thumb2_j
-    100068: right_thumb3_j
-    100070: right_toe_j
-    100072: root_j
-    100074: spine1_j
-    100076: spine2_j
-    100078: //RootNode
+    100006: //RootNode
+    100008: l_thumb_base
+    100010: left_ankle_j
+    100012: left_ball_j
+    100014: left_clavical_j
+    100016: left_elbow_j
+    100018: left_hand_j
+    100020: left_hip_j
+    100022: left_knee_J
+    100024: left_mitten1_j
+    100026: left_mitten2_j
+    100028: left_mitten3_j
+    100030: left_shoulder_J
+    100032: left_thumb1_j
+    100034: left_thumb2_j
+    100036: left_thumb3_j
+    100038: left_toe_j
+    100040: neck_j
+    100042: r_thumb_base
+    100044: right_ankle_j
+    100046: right_ball_j
+    100048: right_clavical_j
+    100050: right_elbow_j
+    100052: right_hand_j
+    100054: right_hip_j
+    100056: right_knee_J
+    100058: right_mitten1_j
+    100060: right_mitten2_j
+    100062: right_mitten3_j
+    100064: right_shoulder_j
+    100066: right_thumb1_J
+    100068: right_thumb2_j
+    100070: right_thumb3_j
+    100072: right_toe_j
+    100074: root_j
+    100076: spine1_j
+    100078: spine2_j
     400000: breast_j
     400002: chin_j
     400004: head_tip_J
-    400006: l_thumb_base
-    400008: left_ankle_j
-    400010: left_ball_j
-    400012: left_clavical_j
-    400014: left_elbow_j
-    400016: left_hand_j
-    400018: left_hip_j
-    400020: left_knee_J
-    400022: left_mitten1_j
-    400024: left_mitten2_j
-    400026: left_mitten3_j
-    400028: left_shoulder_J
-    400030: left_thumb1_j
-    400032: left_thumb2_j
-    400034: left_thumb3_j
-    400036: left_toe_j
-    400038: neck_j
-    400040: r_thumb_base
-    400042: right_ankle_j
-    400044: right_ball_j
-    400046: right_clavical_j
-    400048: right_elbow_j
-    400050: right_hand_j
-    400052: right_hip_j
-    400054: right_knee_J
-    400056: right_mitten1_j
-    400058: right_mitten2_j
-    400060: right_mitten3_j
-    400062: right_shoulder_j
-    400064: right_thumb1_J
-    400066: right_thumb2_j
-    400068: right_thumb3_j
-    400070: right_toe_j
-    400072: root_j
-    400074: spine1_j
-    400076: spine2_j
-    400078: //RootNode
-    7400000: ThrowingNew
+    400006: //RootNode
+    400008: l_thumb_base
+    400010: left_ankle_j
+    400012: left_ball_j
+    400014: left_clavical_j
+    400016: left_elbow_j
+    400018: left_hand_j
+    400020: left_hip_j
+    400022: left_knee_J
+    400024: left_mitten1_j
+    400026: left_mitten2_j
+    400028: left_mitten3_j
+    400030: left_shoulder_J
+    400032: left_thumb1_j
+    400034: left_thumb2_j
+    400036: left_thumb3_j
+    400038: left_toe_j
+    400040: neck_j
+    400042: r_thumb_base
+    400044: right_ankle_j
+    400046: right_ball_j
+    400048: right_clavical_j
+    400050: right_elbow_j
+    400052: right_hand_j
+    400054: right_hip_j
+    400056: right_knee_J
+    400058: right_mitten1_j
+    400060: right_mitten2_j
+    400062: right_mitten3_j
+    400064: right_shoulder_j
+    400066: right_thumb1_J
+    400068: right_thumb2_j
+    400070: right_thumb3_j
+    400072: right_toe_j
+    400074: root_j
+    400076: spine1_j
+    400078: spine2_j
+    7400000: JoggingNew
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -109,17 +109,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: ThrowingNew
+      name: JoggingNew
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
