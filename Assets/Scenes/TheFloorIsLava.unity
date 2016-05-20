@@ -254,6 +254,10 @@ Prefab:
       propertyPath: BallsHere
       value: 
       objectReference: {fileID: 393599158}
+    - target: {fileID: 8216882, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6db66b0d455a164e80770eefc017574, type: 2}
   m_IsPrefabParent: 0
