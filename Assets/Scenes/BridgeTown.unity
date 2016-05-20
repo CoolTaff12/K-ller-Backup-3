@@ -205,7 +205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494484, guid: b16378706b6821f4580905fd4073c824, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.03999996
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 494484, guid: b16378706b6821f4580905fd4073c824, type: 2}
       propertyPath: m_LocalPosition.z
@@ -249,7 +249,7 @@ GameObject:
   - 65: {fileID: 367943462}
   - 114: {fileID: 367943461}
   m_Layer: 0
-  m_Name: OoB (5)
+  m_Name: OoB with Script
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,6 +294,7 @@ MonoBehaviour:
   - {fileID: 1430308128}
   - {fileID: 1975670724}
   respawns: []
+  BallsHere: {fileID: 2009091647}
 --- !u!65 &367943462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1201,6 +1202,47 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 157016, guid: 90ca4db9400309f44830015f91ccaf02, type: 2}
   m_PrefabInternal: {fileID: 1430308126}
+--- !u!1 &1430593006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1430593007}
+  - 65: {fileID: 1430593008}
+  m_Layer: 0
+  m_Name: OoB (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430593007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1430593006}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -48.033825, y: 60.18845, z: -36.295376}
+  m_LocalScale: {x: 266.00702, y: 267.5374, z: 50.960228}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1891761194}
+  m_RootOrder: 5
+--- !u!65 &1430593008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1430593006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1579300055
 Prefab:
   m_ObjectHideFlags: 0
@@ -1385,6 +1427,7 @@ Transform:
   - {fileID: 3664313}
   - {fileID: 1808819661}
   - {fileID: 367943460}
+  - {fileID: 1430593007}
   m_Father: {fileID: 730569677}
   m_RootOrder: 4
 --- !u!1001 &1975670722

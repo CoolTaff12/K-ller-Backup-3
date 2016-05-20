@@ -7769,10 +7769,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748007959}
-  m_LocalRotation: {x: 0.3392696, y: 0, z: 0, w: 0.94068915}
-  m_LocalPosition: {x: -14.959999, y: 0, z: -40.330006}
+  m_LocalRotation: {x: 0.05598257, y: 0, z: 0, w: 0.99843174}
+  m_LocalPosition: {x: -0.2, y: 2.2, z: -40.330006}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 39.6648, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.4185, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 64207409}
   m_RootOrder: 12
@@ -8411,7 +8411,7 @@ GameObject:
   - 65: {fileID: 1853908178}
   - 114: {fileID: 1853908177}
   m_Layer: 0
-  m_Name: OoB (5)
+  m_Name: OoB with Script
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8461,6 +8461,7 @@ MonoBehaviour:
   - {fileID: 55251370}
   - {fileID: 1597798026}
   respawns: []
+  BallsHere: {fileID: 1256193101}
 --- !u!65 &1853908178
 BoxCollider:
   m_ObjectHideFlags: 0
