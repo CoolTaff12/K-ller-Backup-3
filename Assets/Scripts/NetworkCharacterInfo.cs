@@ -102,6 +102,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
             }
             else
             {
+				WaitASec (3);
                 API.Cmd_SpawnColors(gameObject);
             }
         }
@@ -385,4 +386,9 @@ public class NetworkCharacterInfo : NetworkBehaviour
     public void Rpc_CheckingList(GameObject go) {
         CheckingList(go);
     }
+	IEnumerator WaitASec(float waitTime) 
+	{
+		yield return new WaitForSeconds(waitTime);
+		//		Cmd_toggleFake (fakeBall);
+	}
 }
