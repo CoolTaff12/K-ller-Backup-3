@@ -38,6 +38,9 @@ namespace UnityStandardAssets.Network
         public Text statusInfo;
         public Text hostInfo;
 
+        public GameObject Credit;
+
+
         //Client numPlayers from NetworkManager is always 0, so we count (throught connect/destroy in LobbyPlayer) the number
         //of players, so that even client know how many player there is.
         [HideInInspector]
@@ -66,6 +69,7 @@ namespace UnityStandardAssets.Network
             currentPanel = mainMenuPanel;
 
             backButton.gameObject.SetActive(false);
+            Credit.SetActive(false);
             GetComponent<Canvas>().enabled = true;
 
             DontDestroyOnLoad(gameObject);
@@ -448,6 +452,16 @@ namespace UnityStandardAssets.Network
         {
             ChangeTo(mainMenuPanel);
             infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
+        }
+
+        public void ClickCredit()
+        {
+            Credit.SetActive(true);
+        }
+
+        public void ExitCredit()
+        {
+            Credit.SetActive(false);
         }
     }
 }
