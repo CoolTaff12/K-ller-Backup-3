@@ -7,6 +7,7 @@ public class OutofBound : MonoBehaviour
 
     public List<GameObject> SpawningPositions = new List<GameObject>();
     public GameObject[] respawns;
+    public GameObject BallsHere;
 
     // Use this for initialization
     void Start ()
@@ -23,7 +24,16 @@ public class OutofBound : MonoBehaviour
     //If object has fallen out of bound, they get send to one of the spawn points on the map
     void OnTriggerStay(Collider target)
     {
+        GameObject GotCaught = target.gameObject;
+        Teleport(GotCaught);
+    }
+
+    public void Teleport(GameObject location)
+    {
+        Debug.Log("I'm here now!");
         int Selected = Random.Range(0, SpawningPositions.Count);
-        target.transform.position = SpawningPositions[Selected].transform.position;
+        location.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        location.transform.position = SpawningPositions[Selected].transform.position;
+        BallsHere.transform.position = new Vector3(location.transform.position.x, (location.transform.position.y + 5.0f),location.transform.position.z);
     }
 }

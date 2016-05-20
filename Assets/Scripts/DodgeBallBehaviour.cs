@@ -49,6 +49,10 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 		if (bounces <= 0) {
 			thrownByTeam = 0;
 		}
+        if(gameObject.transform.position.y < -2.0f)
+        {
+            GameObject.Find("OoB with Script").GetComponent<OutofBound>().Teleport(gameObject);
+        }
 
 	}
 	//-----------------Play Audio------------------------
