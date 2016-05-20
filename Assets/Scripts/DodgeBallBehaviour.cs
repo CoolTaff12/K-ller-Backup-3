@@ -25,6 +25,8 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 	private GameObject currentPlayer;
 	[SyncVar][SerializeField]
 	private int bounces = 10;
+	[SerializeField]
+	private int bouncesToReset = 10;
     [SyncVar][SerializeField]
     private GameObject ParticlesAwareness;
 
@@ -104,7 +106,7 @@ public class DodgeBallBehaviour : NetworkBehaviour {
 	public void Rpc_Shoot (float force){
 		pickedUp = false;
 		gameObject.transform.position = gat.c_ThrowFrom.transform.position;
-		bounces = 10;
+		bounces = bouncesToReset;
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;
 		rb.isKinematic = false;
