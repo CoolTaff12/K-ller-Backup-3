@@ -90,7 +90,7 @@ public class PlayerInfo : NetworkBehaviour {
 	void Cmd_SpawnHead(GameObject go){
 		infoHandler = GameObject.Find ("PlayerInfoHandler");
 		assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
-		assignInfo.Cmd_SpawnHead(ballPrefab, gat.c_Head, gameObject);
+		assignInfo.Cmd_SpawnHead(ballPrefab, gat.c_Head, go);
 	}
 	/// <summary>
 	/// Command that kills the character.

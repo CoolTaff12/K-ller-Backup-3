@@ -35,6 +35,7 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	/// </summary>
 	/// <param name="go">Prefab of the object that should spawn.</param>
 	/// <param name="pos">spawnposition</param>
+	/// <param name="p">Player that dies</param>
 	[Command]
 	public void Cmd_SpawnHead(GameObject go, GameObject pos, GameObject p)
 	{
