@@ -81,7 +81,6 @@ public class NetworkCharacterInfo : NetworkBehaviour
 		infoHandler = GameObject.Find("PlayerInfoHandler");
         NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
-        checkingPlayers = LM.PlayersOnline.Count;
         //Tells the player what its name is
         gameObject.name = playerName;
         //Renderar the colour and the texture player had choosen ealier
@@ -98,11 +97,8 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 {
                     infoHandler = GameObject.Find("PlayerInfoHandler");
                 }
+                checkingPlayers = LM.PlayersOnline.Count;
                 API = infoHandler.GetComponent<AssignPlayerInfo>();
-            }
-            else
-            {
-                API.Cmd_SpawnColors(gameObject);
             }
         }
         if (checkingPlayers > 0)
@@ -149,52 +145,52 @@ public class NetworkCharacterInfo : NetworkBehaviour
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 1)
             {
                 if(!Team1.Contains(GnT))
-                { Team1.Add(GnT); }
+                { Team1.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 2)
             {
                 if (!Team2.Contains(GnT))
-                { Team2.Add(GnT); }
+                { Team2.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 3)
             {
                 if (!Team3.Contains(GnT))
-                { Team3.Add(GnT); }
+                { Team3.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 4)
             {
                 if (!Team4.Contains(GnT))
-                { Team4.Add(GnT); }
+                { Team4.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 5)
             {
                 if (!Team5.Contains(GnT))
-                { Team5.Add(GnT); }
+                { Team5.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 6)
             {
                 if (!Team6.Contains(GnT))
-                { Team6.Add(GnT); }
+                { Team6.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 7)
             {
                 if (!Team7.Contains(GnT))
-                { Team7.Add(GnT); }
+                { Team7.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 8)
             {
                 if (!Team8.Contains(GnT))
-                { Team8.Add(GnT); }
+                { Team8.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 9)
             {
                 if (!Team9.Contains(GnT))
-                { Team9.Add(GnT); }
+                { Team9.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 10)
             {
                 if (!Team10.Contains(GnT))
-                { Team10.Add(GnT); }
+                { Team10.Add(GnT); API.Cmd_SpawnColors(GnT); }
             }
         }
     }
