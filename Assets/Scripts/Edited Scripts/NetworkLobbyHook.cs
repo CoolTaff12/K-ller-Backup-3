@@ -60,7 +60,5 @@ public class NetworkLobbyHook : LobbyHook
         isinLevel = false;
         showResults = false;
         LM.Exiting(MouseLocking, true);
-    }
-
-    
+    }    
 }

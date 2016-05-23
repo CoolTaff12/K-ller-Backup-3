@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FloorIsLavaScript : MonoBehaviour {
+public class FloorIsLavaScript : MonoBehaviour
+{
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,9 @@ public class FloorIsLavaScript : MonoBehaviour {
         if (other.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>())
         {
             GameObject target = other.gameObject;
-            Vector3 OldSet = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
             target.GetComponent<PlayerInfo>().Cmd_KillYourself(target);
-            target.transform.position = OldSet;
+            target.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_Jumping = false;
+            target.transform.position = new Vector3 (69, 20, -30);
         }
     }
 }
