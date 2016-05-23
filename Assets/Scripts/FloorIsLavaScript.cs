@@ -20,7 +20,9 @@ public class FloorIsLavaScript : MonoBehaviour {
         if (other.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>())
         {
             GameObject target = other.gameObject;
+            Vector3 OldSet = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
             target.GetComponent<PlayerInfo>().Cmd_KillYourself(target);
+            target.transform.position = OldSet;
         }
     }
 }

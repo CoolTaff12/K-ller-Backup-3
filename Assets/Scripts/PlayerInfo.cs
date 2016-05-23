@@ -32,10 +32,12 @@ public class PlayerInfo : NetworkBehaviour {
 	private GrabAndToss gat;
 	private NetworkCharacterInfo netInfo;
 	private DodgeBallBehaviour ballInfo; //Script on the ball colliding with the player;
+    private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPlayer;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        FPlayer = gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 		gat = gameObject.GetComponent<GrabAndToss> ();
 		NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
 		netInfo = gameObject.GetComponent<NetworkCharacterInfo> ();
@@ -99,7 +101,9 @@ public class PlayerInfo : NetworkBehaviour {
 	[Command]
 	public void Cmd_KillYourself(GameObject go){
 		infoHandler = GameObject.Find ("PlayerInfoHandler");
-		assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
+        FPlayer.m_MouseLook.lockCursor = false;
+        UnityEngine.Cursor.visible = true;
+        assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
         assignInfo.Cmd_KillAPlayer(go);
         Debug.Log("CmD_Killyourself");
 	}

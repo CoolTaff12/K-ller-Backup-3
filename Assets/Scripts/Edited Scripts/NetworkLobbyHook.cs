@@ -59,8 +59,6 @@ public class NetworkLobbyHook : LobbyHook
         yield return new WaitForSeconds(waitTime);
         isinLevel = false;
         showResults = false;
-        MouseLocking.m_MouseLook.lockCursor = false;
-        UnityEngine.Cursor.visible = true;
         LM.Exiting(MouseLocking, true);
     }
 

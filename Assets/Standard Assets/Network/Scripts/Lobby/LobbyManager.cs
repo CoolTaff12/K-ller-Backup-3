@@ -63,13 +63,11 @@ namespace UnityStandardAssets.Network
 
         void Start()
         {
-            UnityEngine.Cursor.visible = true;
             s_Singleton = this;
             _lobbyHooks = GetComponent<UnityStandardAssets.Network.LobbyHook>();
             currentPanel = mainMenuPanel;
 
             backButton.gameObject.SetActive(false);
-            Credit.SetActive(false);
             GetComponent<Canvas>().enabled = true;
 
             DontDestroyOnLoad(gameObject);

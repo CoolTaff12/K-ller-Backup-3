@@ -17,11 +17,6 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	void Update () {
 	
 	}
-    [Command]
-    public void Cmd_SpawnColors(GameObject go)
-    {
-        go.GetComponent<NetworkCharacterInfo>().Rpc_SpawnColors();
-    }
 
 
     [Command]

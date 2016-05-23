@@ -37,12 +37,12 @@ public class NetworkCharacterInfo : NetworkBehaviour
     [SerializeField]
     private GameObject Victory;
     [SerializeField]
+    private GameObject Draw;
+    [SerializeField]
     private List<GameObject> TeamPlayers;
-    public GameObject infoHandler; //PlayerInfoHandler found in scene.
 
     public NetworkLobbyHook NLH;
     public UnityStandardAssets.Network.LobbyManager LM;
-    public AssignPlayerInfo API;
 
     public AudioClip[] audioClips;
 
@@ -78,29 +78,16 @@ public class NetworkCharacterInfo : NetworkBehaviour
     // Use this for initialization
     void Start ()
     {
-		infoHandler = GameObject.Find("PlayerInfoHandler");
         NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
         //Tells the player what its name is
+        checkingPlayers = LM.PlayersOnline.Count;
         gameObject.name = playerName;
         //Renderar the colour and the texture player had choosen ealier
     }
 
     void Update()
     {   
-        //Renderar the colour and the texture player had choosen ealier
-        if(checkingTexture > 0)
-        {
-            if(API == null)
-            {
-                if(infoHandler == null)
-                {
-                    infoHandler = GameObject.Find("PlayerInfoHandler");
-                }
-                checkingPlayers = LM.PlayersOnline.Count;
-                API = infoHandler.GetComponent<AssignPlayerInfo>();
-            }
-        }
         if (checkingPlayers > 0)
         {
             GameObject[] AvalibleEntries = GameObject.FindGameObjectsWithTag("Player");
@@ -120,7 +107,6 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
     public void Rpc_SpawnColors()
     {
         for (int i = 0; i < ChoosenMaterials.Length; i++)
@@ -137,6 +123,12 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
+    public void Cmd_SpawnColors()
+    {
+        Debug.Log("Colour set");
+        Rpc_SpawnColors();
+    }
+
     public  void CheckAvailablePlayers()
     {
         foreach (GameObject GnT in TeamPlayers)
@@ -145,52 +137,52 @@ public class NetworkCharacterInfo : NetworkBehaviour
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 1)
             {
                 if(!Team1.Contains(GnT))
-                { Team1.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team1.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 2)
             {
                 if (!Team2.Contains(GnT))
-                { Team2.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team2.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 3)
             {
                 if (!Team3.Contains(GnT))
-                { Team3.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team3.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 4)
             {
                 if (!Team4.Contains(GnT))
-                { Team4.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team4.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 5)
             {
                 if (!Team5.Contains(GnT))
-                { Team5.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team5.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 6)
             {
                 if (!Team6.Contains(GnT))
-                { Team6.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team6.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 7)
             {
                 if (!Team7.Contains(GnT))
-                { Team7.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team7.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 8)
             {
                 if (!Team8.Contains(GnT))
-                { Team8.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team8.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 9)
             {
                 if (!Team9.Contains(GnT))
-                { Team9.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team9.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
             if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 10)
             {
                 if (!Team10.Contains(GnT))
-                { Team10.Add(GnT); API.Cmd_SpawnColors(GnT); }
+                { Team10.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors(); }
             }
         }
     }
@@ -364,6 +356,16 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
+            }
+        }
+        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
+         Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        {
+            foreach (GameObject Draw in TeamPlayers)
+            {
+                Draw.GetComponent<NetworkCharacterInfo>().Draw.SetActive(true);
+                Draw.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Draw.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
     }
