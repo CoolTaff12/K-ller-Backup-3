@@ -60,6 +60,9 @@ public class NetworkCharacterInfo : NetworkBehaviour
         gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().Play();
     }
 
+	/// <summary>
+	/// Creates new GameObject lists for the script to register on Awake.
+	/// </summary>
     void Awake()
     {
         Team1 = new List<GameObject>();
@@ -86,6 +89,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
         //Renderar the colour and the texture player had choosen ealier
     }
 
+	/// <summary>
+	/// Since checkingPlayers have the same Count as LobbyManagers PlayeOnline list, this
+	/// will check add every new game object tagged "Player" and add them to TeamPlayerslist
+	/// </summary>
+	/// <param name="NewPlayer">The Player GameObject</param>
     void Update()
     {   
         if (checkingPlayers > 0)
@@ -107,7 +115,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
-    public void Rpc_SpawnColors()
+	/// <summary>
+	/// Command the players to find the right material by name and change it by it's color
+	/// </summary>
+	/// <param name="matt">The Player Material</param>
+    private void Rpc_SpawnColors()
     {
         for (int i = 0; i < ChoosenMaterials.Length; i++)
         {
@@ -123,12 +135,19 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
+	/// <summary>
+	/// Tells the method to start spawn the players color
+	/// </summary>
     public void Cmd_SpawnColors()
     {
         Debug.Log("Colour set");
         Rpc_SpawnColors();
     }
 
+	/// <summary>
+	/// Adding player from TeamPLayers list to a sepret list based on his teamNumber
+	/// </summary>
+	/// <param name="GnT">The Player GameObject</param>
     public  void CheckAvailablePlayers()
     {
         foreach (GameObject GnT in TeamPlayers)
@@ -187,6 +206,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
+	/// <summary>
+	/// If the player has been hit and is dead, it wil remove the player from the list.
+	/// It will then take the number away from the player and check the current teamstatus.
+	/// </summary>
+	/// <param name="isc_Dead">The Player GameObject</param>
     public void CheckingList(GameObject isc_Dead)
     {
         Debug.Log("isc_Dead name is " + isc_Dead);
@@ -235,6 +259,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
         CheckforTeamStatus();
     }
 
+	/// <summary>
+	/// Checks with the current team status, who won and if its a draw.
+	/// </summary>
+	/// <param name="Winner">The Player GameObjects who won</param>
+	/// <param name="Draw">The Player GameObjects who have both lost</param>
     private void CheckforTeamStatus()
     {
         Debug.Log("Here I go again on my own");
