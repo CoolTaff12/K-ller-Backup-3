@@ -18,7 +18,10 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	
 	}
 
-
+	/// <summary>
+	/// Command to kill a given player.
+	/// </summary>
+	/// <param name="go">The Player GameObject</param>
     [Command]
 	public void Cmd_KillAPlayer(GameObject go)
 	{
@@ -43,7 +46,6 @@ public class AssignPlayerInfo : NetworkBehaviour {
 				matt.color = p.GetComponent<NetworkCharacterInfo>().color;
 			}
 		}
-//		HeadBall.GetComponent<Renderer> ().material.mainTexture = go.GetComponent<PlayerInfo>().bodyparts [0].GetComponent<Renderer> ().material.mainTexture;
 		NetworkServer.Spawn(HeadBall);
 	}
 }

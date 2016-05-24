@@ -137,7 +137,6 @@ public class PlayerInfo : NetworkBehaviour {
             NCI.GetComponent<NetworkCharacterInfo>().Rpc_CheckingList(gameObject);
             Debug.Log("Players name " + NCI.name);
         }
-        //  gameObject.GetComponent<PlayerInfo>().dead = true;
         gameObject.GetComponent<BoxCollider> ().enabled = false;
 
 
@@ -152,7 +151,6 @@ public class PlayerInfo : NetworkBehaviour {
 		rb.Sleep ();
 		deathMessage.SetActive (true);
 		foreach(GameObject gos in bodyparts){
-			//gos.GetComponent<Renderer> ().material.mainTexture = mat;
 			gos.layer = 10;
 		}
         gameObject.layer = 10;

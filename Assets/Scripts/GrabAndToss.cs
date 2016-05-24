@@ -15,7 +15,6 @@ public class GrabAndToss : NetworkBehaviour
 	[SerializeField]
 	private float tossForce = 20f; //Force added to ball when tossed. Default set to 20;
 	public float c_TossForce{get{return tossForce;}set{tossForce = value;}}
-//	public int killed = 1; //Is this character killed? 1 for true, 0 for false;
 	[SyncVar][SerializeField]
 	private bool holdingBall; //Is this character holding a ball?
 	[HideInInspector]
@@ -38,8 +37,7 @@ public class GrabAndToss : NetworkBehaviour
 	[SerializeField]
 	private GameObject throwFrom  = null; //Position of the held ball.
 	public GameObject c_ThrowFrom{get{return throwFrom;}}
-//	[SerializeField]
-//	private GameObject fakeBall;
+
 	private PlayerInfo playerInfo;
 	private NetworkCharacterInfo charInfo;
 
@@ -67,25 +65,18 @@ public class GrabAndToss : NetworkBehaviour
     void Update ()
 	{
 
-
-
-//DEBUG//
-//Debug.DrawRay (head.transform.position, head.transform.forward, Color.green, rayDistance);
-
 		//Is the player looking at a ball?
 		if (Physics.SphereCast (c_Head.transform.position, rayRadius, c_Head.transform.forward, out hit, rayDistance)) {
 			if (!isLocalPlayer) {
 				return;
 			}
 			if (hit.collider.GetComponent<DodgeBallBehaviour> () != null) {
-//				print ("Ball!");
 				//Pick up the ball
 				if (CrossPlatformInputManager.GetButton ("Fire1") && !holdingBall && !playerInfo.c_Dead) {
 					if (!hit.collider.GetComponent<DodgeBallBehaviour> ().b_PickedUp) {
 					currentBall = hit.collider.gameObject;
 					Cmd_GetPickedUp (currentBall , gameObject);
 					holdingBall = true;
-//					Cmd_toggleFake (fakeBall);
 
 					}
 
@@ -108,7 +99,6 @@ public class GrabAndToss : NetworkBehaviour
 			holdingBall = false;
 			StartCoroutine(StartThrow(0.5F));
 			Cmd_Shoot (currentBall, tossForce);
-//			brb.AddForce(head.transform.forward * tossForce);
 			currentBall = null;
 			ballScript = null;
 
@@ -140,28 +130,6 @@ public class GrabAndToss : NetworkBehaviour
 		ballScript = bs.GetComponent<DodgeBallBehaviour> ();
 		ballScript.Rpc_GetPickedUp (go);
 	}
-//	/// <summary>
-//	/// Requests that the fake ball switches layer.
-//	/// </summary>
-//	/// <param name="go">fake ball object</param>
-//	[Command]
-//	void Cmd_toggleFake(GameObject go){
-//		Rpc_toggleFake (go);
-//	}
-//	/// <summary>
-//	/// Switches the layer of the fake ball
-//	/// </summary>
-//	/// <param name="go">fake ball object</param>
-//	[ClientRpc]
-//	void Rpc_toggleFake(GameObject go){
-//		if (holdingBall) {
-//			go.layer = 9;
-//		}
-//		if (!holdingBall) {
-//			go.GetComponent<Renderer> ().material.mainTexture = currentBall.GetComponent<Renderer> ().material.mainTexture;
-//			go.layer = 0;
-//		}
-//	}
 	/// <summary>
 	/// timer that lets the animation run a bit before proceeding.
 	/// </summary>
@@ -170,6 +138,5 @@ public class GrabAndToss : NetworkBehaviour
 	IEnumerator StartThrow(float waitTime) 
 	{
 		yield return new WaitForSeconds(waitTime);
-//		Cmd_toggleFake (fakeBall);
 	}
 }
