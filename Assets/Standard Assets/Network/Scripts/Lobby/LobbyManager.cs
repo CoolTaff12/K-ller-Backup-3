@@ -181,6 +181,8 @@ namespace UnityStandardAssets.Network
         public void GoBackButton()
         {
             PlayersOnline = new List<GameObject>();
+            UnityStandardAssets.Characters.FirstPerson.MouseLook NewMouseLock = new UnityStandardAssets.Characters.FirstPerson.MouseLook();
+            NewMouseLock.lockCursor = false;
             transform.FindChild("TopPanel").GetComponent<LobbyTopPanel>().isInGame = false;
             transform.FindChild("TopPanel").GetComponent<LobbyTopPanel>().ToggleVisibility(true);
             backDelegate();
@@ -192,11 +194,13 @@ namespace UnityStandardAssets.Network
         {
             if(isInGame)
             {
+                MouseLock.m_MouseLook.lockCursor = false;
                 UnityEngine.Cursor.visible = true;
                 backButton.onClick.Invoke();
             }
             else if(!isInGame)
             {
+                MouseLock.m_MouseLook.lockCursor = false;
                 UnityEngine.Cursor.visible = true;
                 backButton.onClick.Invoke();
             }
