@@ -35,7 +35,7 @@ public class AssignPlayerInfo : NetworkBehaviour {
 	/// <param name="pos">spawnposition</param>
 	/// <param name="p">Player that dies</param>
 	[Command]
-	public void Cmd_SpawnHead(GameObject go, GameObject pos, GameObject p)
+	public void Cmd_SpawnHead(GameObject go, GameObject pos, GameObject p, Color C)
 	{
 		GameObject HeadBall = Instantiate(go, pos.transform.position, Quaternion.identity) as GameObject;
 		foreach (Material matt in HeadBall.GetComponent<Renderer>().materials)
@@ -43,7 +43,7 @@ public class AssignPlayerInfo : NetworkBehaviour {
 			if (matt.name == "Armor (Instance)")
 			{
 				Debug.Log("I'm here");
-				matt.color = p.GetComponent<NetworkCharacterInfo>().color;
+				matt.color = C;
 			}
 		}
 		NetworkServer.Spawn(HeadBall);

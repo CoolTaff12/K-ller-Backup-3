@@ -66,7 +66,7 @@ namespace UnityStandardAssets.Network
             s_Singleton = this;
             _lobbyHooks = GetComponent<UnityStandardAssets.Network.LobbyHook>();
             currentPanel = mainMenuPanel;
-
+            PlayersOnline = new List<GameObject>();
             backButton.gameObject.SetActive(false);
             GetComponent<Canvas>().enabled = true;
 

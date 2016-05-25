@@ -4,7 +4,9 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class PlayerInfo : NetworkBehaviour {
+public class PlayerInfo : NetworkBehaviour
+{
+    public Color playersColor;
 	[SerializeField]
 	private GameObject[] bodyparts = null; //List of bodypart segments.
 	[SerializeField]
@@ -92,7 +94,7 @@ public class PlayerInfo : NetworkBehaviour {
 	void Cmd_SpawnHead(GameObject go){
 		infoHandler = GameObject.Find ("PlayerInfoHandler");
 		assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
-		assignInfo.Cmd_SpawnHead(ballPrefab, gat.c_Head, go);
+		assignInfo.Cmd_SpawnHead(ballPrefab, gat.c_Head, go, playersColor);
 	}
 	/// <summary>
 	/// Command that kills the character.
