@@ -1989,7 +1989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 403332}
   m_ChildIndex: 2
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.05
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 442418}
   m_ChildIndex: 0
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.05
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 472092}
   m_ChildIndex: 1
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.05
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -2423,6 +2423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c14b85f66cb649448c9071231bc5830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playersColor: {r: 0, g: 0, b: 0, a: 0}
   bodyparts:
   - {fileID: 128810}
   - {fileID: 100082}

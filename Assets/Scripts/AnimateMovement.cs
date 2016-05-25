@@ -39,7 +39,8 @@ public class AnimateMovement : NetworkBehaviour {
 			}
 			if (Fpc.m_Jumping && !jumpPlayed) {
 				anim.SetBool("isJumping", true);
-				jumpPlayed = true;
+                anim.SetBool("isIdle", false);
+                jumpPlayed = true;
 			}
 			if (!Fpc.m_Jumping && jumpPlayed) {
 				jumpPlayed = false;
