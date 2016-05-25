@@ -9788,9 +9788,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118720}
   m_LocalRotation: {x: 0.07691108, y: 0.38430002, z: -0.032146767, w: 0.9194372}
-  m_LocalPosition: {x: -7.18, y: 0.24188843, z: -11.38}
+  m_LocalPosition: {x: -7.18, y: 1, z: -11.38}
   m_LocalScale: {x: 0.93177223, y: 0.9317722, z: 0.93177223}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.5633, y: 45.3672, z: 0}
   m_Children: []
   m_Father: {fileID: 493772}
   m_RootOrder: 29
@@ -12250,8 +12250,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.10808486, y: -2.0968602, z: 4.5750012}
-  m_LocalScale: {x: 48.268177, y: 0.8122403, z: 51.841454}
+  m_LocalPosition: {x: -5.4, y: -2.1, z: 4.15}
+  m_LocalScale: {x: 55.947258, y: 0.8122403, z: 57.7884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 493772}
@@ -29980,7 +29980,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1a3aa1a97f69f645bf1d336fc0c16fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
