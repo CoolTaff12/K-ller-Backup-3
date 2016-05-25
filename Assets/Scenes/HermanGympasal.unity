@@ -329,12 +329,12 @@ Transform:
   - {fileID: 383228828}
   - {fileID: 1386216467}
   - {fileID: 400718508}
+  - {fileID: 1748007964}
   - {fileID: 433825522}
   - {fileID: 343438822}
   - {fileID: 182734004}
   - {fileID: 1659813276}
   - {fileID: 659902325}
-  - {fileID: 1748007964}
   - {fileID: 2069510235}
   - {fileID: 741627267}
   - {fileID: 1055823137}
@@ -953,7 +953,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 89.980194, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!23 &182734005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1644,7 +1644,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: -89.980194, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!23 &343438823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2014,7 +2014,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: -180}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!23 &433825523
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2919,7 +2919,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!23 &659902326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7495,7 +7495,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!23 &1659813277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8280,7 +8280,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 6.4185, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 64207409}
-  m_RootOrder: 12
+  m_RootOrder: 7
 --- !u!82 &1748007965
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8292,9 +8292,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f45e7ac62f93df643b985f9642f77891, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
