@@ -336,6 +336,38 @@ Prefab:
       propertyPath: BallsHere
       value: 
       objectReference: {fileID: 393599158}
+    - target: {fileID: 449756, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 449756, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 449756, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 55.947258
+      objectReference: {fileID: 0}
+    - target: {fileID: 449756, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 57.7884
+      objectReference: {fileID: 0}
+    - target: {fileID: 449756, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 414248, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 414248, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 9.5633
+      objectReference: {fileID: 0}
+    - target: {fileID: 414248, guid: e6db66b0d455a164e80770eefc017574, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45.3672
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6db66b0d455a164e80770eefc017574, type: 2}
   m_IsPrefabParent: 0
