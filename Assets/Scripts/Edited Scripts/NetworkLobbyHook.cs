@@ -15,6 +15,9 @@ public class NetworkLobbyHook : LobbyHook
     public LobbyManager LM;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController MouseLocking;
 
+    /// <summary>
+	/// When LobbySever loads the scene, the player object who gets spawn recive the values and name from the players own LobbyPlayer.
+	/// </summary>
     /// <param name="manager">The NetworkManager</param>
     /// <param name="lobbyPlayer">the lobbyPlayer that gives out values to NetworkCharacterInfo</param>
     /// <param name="gameplayer">Makes Ourplayer the same as the selected gamePlayer</param>

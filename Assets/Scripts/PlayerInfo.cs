@@ -35,12 +35,14 @@ public class PlayerInfo : NetworkBehaviour
 	private NetworkCharacterInfo netInfo;
 	private DodgeBallBehaviour ballInfo; //Script on the ball colliding with the player;
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPlayer;
+    private UnityStandardAssets.Network.LobbyManager LM;
 
 
     // Use this for initialization
     void Start () {
         FPlayer = gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
-		gat = gameObject.GetComponent<GrabAndToss> ();
+        LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
+        gat = gameObject.GetComponent<GrabAndToss> ();
 		NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
 		netInfo = gameObject.GetComponent<NetworkCharacterInfo> ();
 	}
@@ -151,7 +153,8 @@ public class PlayerInfo : NetworkBehaviour
 		rb.detectCollisions = false;
 		rb.useGravity = false;
 		rb.Sleep ();
-		deathMessage.SetActive (true);
+        LM.PlayersOnline.Clear();
+        deathMessage.SetActive (true);
 		foreach(GameObject gos in bodyparts){
 			gos.layer = 10;
 		}
