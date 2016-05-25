@@ -67,6 +67,10 @@ public class PlayerInfo : NetworkBehaviour
 			if (Input.GetKey (KeyCode.LeftControl)) {
 				gameObject.transform.position = new Vector3 (transform.position.x, transform.position.y - flySpeed * Time.deltaTime , transform.position.z);
 			}
+			if (Input.GetKeyUp (KeyCode.Space)) {
+				Rigidbody rib = gameObject.GetComponent<Rigidbody>();
+				rib.Sleep ();
+			}
 		}
 	}
 	void OnCollisionEnter(Collision col)
