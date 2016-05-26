@@ -46,14 +46,12 @@ public class NetworkCharacterInfo : NetworkBehaviour
 
     public AudioClip[] audioClips;
 
-    //hard to control WHEN Init is called (networking make order between object spawning non deterministic)
-    //so we call init from multiple location (depending on what between spaceship & manager is created first).
-    protected bool WasInit = false;
-
     protected bool CheckedPlayers = false;
 
-    //-----------------Play Audio------------------------
-    //This will take the gameobjects AudioSource to switch the audioclips
+    /// <summary>
+    /// This will take the gameobjects AudioSource to switch the audioclips-
+    /// </summary>
+    /// <param name="clip">the number in the Audioclip</param>
     public void PlaySound(int clip)
     {
         gameObject.transform.FindChild("FirstPersonCharacter").GetComponent<AudioSource>().clip = audioClips[clip];
@@ -416,15 +414,10 @@ public class NetworkCharacterInfo : NetworkBehaviour
         }
     }
 
-    public void Init()
-    {
-        if (WasInit)
-            return;
-
-        //Make a score text
-        GameObject scoreGO = new GameObject(playerName + "score");
-        WasInit = true;
-    }
+    /// <summary>
+    /// Calls client with the gameObject that is dead.
+    /// </summary>
+    /// <param name="go">The Player GameObjects who have died</param>
     [ClientRpc]
     public void Rpc_CheckingList(GameObject go) {
         CheckingList(go);

@@ -8,15 +8,18 @@ public class SpriteAnimation : MonoBehaviour
     public Sprite[] Circles;
     public float framesPerSecond;
 
-    // Use this for initialization
+    /// <summary>
+    /// Calls the object the animation going to take place.
+    /// </summary>
     void Start ()
     {
-        //Calls the object the animation going to take place
         myImage = GameObject.Find("Load Circle").GetComponent<Image>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
+   
+    /// <summary>
+    /// Updates and make sprite switch once per frame, thus creating an animation.
+    /// </summary>
+    void Update ()
     {
         //The Animation
         if (myImage != null)

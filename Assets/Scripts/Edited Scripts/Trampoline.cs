@@ -4,7 +4,6 @@ using System.Collections;
 public class Trampoline : MonoBehaviour
 {
 	public Vector3 force = new Vector3(0, 10, 0);
-	public bool relative = false;
     [SerializeField]
     private float TrampolineForce;
     public int AppliedForce;
@@ -12,11 +11,16 @@ public class Trampoline : MonoBehaviour
     public int StrongForce;
 
     Vector3 _overwrite = Vector3.zero;
-	
-	void OnTriggerEnter(Collider other)
+
+    /// <summary>
+    /// The first if-statement runs if the object isTrigger or doesn't have a rigidbody
+    /// The second to the forth if-statementruns runs if the object is not the player but have rigidbody
+    /// The fith if-statement runs if the object is the player
+    /// </summary>
+    /// /// <param name="other">The objects Collider.</param>
+    void OnTriggerEnter(Collider other)
 	{
-        //If the object is not the player
-		if (other.isTrigger || !other.GetComponent<Rigidbody>())
+        if (other.isTrigger || !other.GetComponent<Rigidbody>())
 			return;
 		
 		_overwrite = -other.GetComponent<Rigidbody>().velocity;
@@ -27,10 +31,8 @@ public class Trampoline : MonoBehaviour
 		if (force.z < Mathf.Epsilon)
 			_overwrite.z = 0F;
 		
-		if (relative)
-			other.GetComponent<Rigidbody>().AddRelativeForce(force-other.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);
-		else
-			other.GetComponent<Rigidbody>().AddForce(force-other.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);
+            other.GetComponent<Rigidbody>().AddForce(force - other.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);
+
 
         //If the object is the player
         if (other.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>())

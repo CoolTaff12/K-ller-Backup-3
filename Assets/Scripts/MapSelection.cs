@@ -9,16 +9,20 @@ public class MapSelection : MonoBehaviour
     public Image MapFolder;
     public Sprite[] MapImages;
 
-    // Use this for initialization
+    /// <summary>
+    /// When the script start, it will declair which text, image and script to OptionSelected, MapFolder and LobbyScenes.
+    /// </summary>
     void Start ()
     {
         LobbyScenes = GameObject.Find("LobbyManager").GetComponent< UnityStandardAssets.Network.LobbyManager>();
         OptionSelected = GameObject.Find("OptionSelection").GetComponent<Text>();
         MapFolder = GameObject.Find("MapImage").GetComponent<Image>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    /// <summary>
+    /// If the dropdown list text value changes to either of these choises, the image and player scene will change.
+    /// </summary>
+    void Update ()
     {
 	    if(OptionSelected.text == "GYM_FORT")
         {

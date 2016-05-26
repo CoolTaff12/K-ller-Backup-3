@@ -40,7 +40,9 @@ public class NetworkLobbyHook : LobbyHook
         }
     }
 
-
+    /// <summary>
+    /// If the player presses Escape and expected to exit the game
+    /// </summary>
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape) && showResults == false)
@@ -57,6 +59,10 @@ public class NetworkLobbyHook : LobbyHook
     }
 
 
+    /// <summary>
+    /// This turns bools to false and commands its own LobbyManager to exit the match
+    /// </summary>
+    /// <param name="waitTime">Float that waits before it beings to run</param>
     public IEnumerator GoBacktoLobby(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);

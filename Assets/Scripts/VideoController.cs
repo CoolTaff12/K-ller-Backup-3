@@ -7,15 +7,18 @@ public class VideoController : MonoBehaviour
 {
     public float Timeduration;
 
-	// Use this for initialization
+    /// <summary>
+    /// When the its start, it will immedially get the component of it's gameObject and start to play it.
+    /// </summary>
 	void Start ()
     {
         MovieTexture movie = GetComponent<RawImage>().material.mainTexture as MovieTexture;
-        Debug.Log("movie name is " + movie.name);
         movie.Play();
 	}
-	
-	// Update is called once per frame
+
+    /// <summary>
+    /// After 9.5f, then it's going to load the next scene or the scene called "NetworkLobby".
+    /// </summary>
 	void Update ()
     {
         Timeduration += (Time.deltaTime * 2);

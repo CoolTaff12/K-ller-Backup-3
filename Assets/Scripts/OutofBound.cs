@@ -20,14 +20,21 @@ public class OutofBound : MonoBehaviour
             SpawningPositions.Add(spawns);
         }
     }
-	
-    //If object has fallen out of bound, they get send to one of the spawn points on the map
+
+    /// <summary>
+    /// When a gameObject with Collider stay in this gameobject and has fallen out of bound, they get send to one of the spawn points on the map
+    /// </summary>
+    ///  <param name="target">The object which falls to this objects collider.</param>
     void OnTriggerStay(Collider target)
     {
         GameObject GotCaught = target.gameObject;
         Teleport(GotCaught);
     }
 
+    /// <summary>
+    /// This teleport a selected gameObject to one of Spawnpositions positions.
+    /// </summary>
+    /// <param name="location">The GameObject that will be telepored.</param>
     public void Teleport(GameObject location)
     {
         Debug.Log("I'm here now!");

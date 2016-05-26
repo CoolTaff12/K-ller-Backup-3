@@ -33,10 +33,6 @@ public class NetworkGameManager : NetworkBehaviour
             StartCoroutine(AsteroidCoroutine());
         }
 
-        for (int i = 0; i < sCHaracter.Count; ++i)
-        {
-            sCHaracter[i].Init();
-        }
     }
 
     [ServerCallback]

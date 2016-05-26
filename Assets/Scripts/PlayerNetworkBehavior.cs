@@ -10,7 +10,11 @@ public class PlayerNetworkBehavior : NetworkBehaviour {
 	[SerializeField] GameObject[] bodyParts = null;
 
 
-	public override void OnStartLocalPlayer ()
+    /// <summary>
+    /// When its start on local player, it's enables the camera and other components
+    /// </summary>
+    ///  <param name="go">The Player bodyparts</param>
+    public override void OnStartLocalPlayer ()
 	{
 		cam.enabled = true;
 		gat = gameObject.GetComponent<GrabAndToss> ();
@@ -27,7 +31,10 @@ public class PlayerNetworkBehavior : NetworkBehaviour {
 		GetComponent<NetworkAnimator> ().SetParameterAutoSend (4, true);
 	}
 
-	public override void PreStartClient(){
+    /// <summary>
+    /// This sends to the client the animations.
+    /// </summary>
+    public override void PreStartClient(){
 		GetComponent<NetworkAnimator> ().SetParameterAutoSend (0, true);
 		GetComponent<NetworkAnimator> ().SetParameterAutoSend (1, true);
 		GetComponent<NetworkAnimator> ().SetParameterAutoSend (2, true);
