@@ -7,14 +7,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class AnimateMovement : NetworkBehaviour {
 	private Animator anim;
 	private FirstPersonController Fpc;
-	private GrabAndToss gat;
 	private bool jumpPlayed = false;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
 		Fpc = gameObject.GetComponent<FirstPersonController> ();
-		gat = gameObject.GetComponent<GrabAndToss> ();
 	
 	}
 	

@@ -26,11 +26,8 @@ public class PlayerInfo : NetworkBehaviour
 	private bool dead = false; //Is this character dead?
 	public bool c_Dead {get{return dead;}}
 	[SerializeField]
-	private Texture mat = null;
-	[SerializeField]
 	private AudioClip[] audioClips = null;
 	private AssignPlayerInfo assignInfo; //Script to set initial info such as teamNumber.
-	private NetworkLobbyHook NLH;
 	private GrabAndToss gat;
 	private NetworkCharacterInfo netInfo;
 	private DodgeBallBehaviour ballInfo; //Script on the ball colliding with the player;
@@ -43,7 +40,6 @@ public class PlayerInfo : NetworkBehaviour
         FPlayer = gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
         gat = gameObject.GetComponent<GrabAndToss> ();
-		NLH = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyHook>();
 		netInfo = gameObject.GetComponent<NetworkCharacterInfo> ();
 	}
 	
