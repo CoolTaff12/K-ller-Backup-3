@@ -31,13 +31,11 @@ public class PlayerInfo : NetworkBehaviour
 	private GrabAndToss gat;
 	private NetworkCharacterInfo netInfo;
 	private DodgeBallBehaviour ballInfo; //Script on the ball colliding with the player;
-    private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPlayer;
     private UnityStandardAssets.Network.LobbyManager LM;
 
 
     // Use this for initialization
     void Start () {
-        FPlayer = gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         LM = GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>();
         gat = gameObject.GetComponent<GrabAndToss> ();
 		netInfo = gameObject.GetComponent<NetworkCharacterInfo> ();
@@ -105,7 +103,6 @@ public class PlayerInfo : NetworkBehaviour
 	[Command]
 	public void Cmd_KillYourself(GameObject go){
 		infoHandler = GameObject.Find ("PlayerInfoHandler");
-        FPlayer.m_MouseLook.lockCursor = false;
         UnityEngine.Cursor.visible = true;
         assignInfo = infoHandler.GetComponent<AssignPlayerInfo> ();
         assignInfo.Cmd_KillAPlayer(go);
@@ -147,6 +144,7 @@ public class PlayerInfo : NetworkBehaviour
 		gameObject.GetComponent<FirstPersonController> ().m_RunSpeed = 30;
 		gameObject.GetComponent<FirstPersonController> ().m_WalkSpeed = 15;
 		gameObject.GetComponent<FirstPersonController> ().m_JumpSpeed = 0;
+        gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
         gameObject.GetComponent<FirstPersonController>().m_GravityMultiplier = 0;
         PlaySound(Random.Range(0,2));
 		Rigidbody rb = gameObject.GetComponent<Rigidbody>();

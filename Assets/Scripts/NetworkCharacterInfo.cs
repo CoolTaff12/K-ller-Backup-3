@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 
@@ -291,6 +292,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -303,6 +305,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -315,6 +318,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -327,6 +331,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -339,6 +344,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -351,6 +357,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -363,6 +370,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -375,6 +383,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -387,6 +396,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -399,6 +409,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
                 Winners.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Winners.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
@@ -409,6 +420,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
             {
                 Draw.GetComponent<NetworkCharacterInfo>().Draw.SetActive(true);
                 Draw.GetComponent<NetworkCharacterInfo>().NLH.showResults = true;
+                Draw.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 Draw.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
