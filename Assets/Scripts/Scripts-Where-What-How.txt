@@ -363,8 +363,42 @@ LobbyPlayerList
 LobbyManager
 
 
+Scriptnamn: FloorisLavaScript
 
 
+Vad gör den?                
+Den dödar spelaren när spelaren hamnar i dens Collider
+
+Var ligger den?
+./Assets/Scripts
+
+
+Vilket objekt ligger den på?
+Eget GameObject
+
+
+Refererar till:
+FirstPersonController
+PlayerInfo
+
+
+Scriptnamn: VideoController
+
+Vad gör den?                
+Spelar upp Movietexture and laddar upp den nästa scene då Movetexture är över
+
+Var ligger den?
+./Assets/Scripts
+
+
+Vilket objekt ligger den på?
+Eget GameObject
+
+
+Refererar till:
+Inget
+
+_____________________________________________________
 Andra Scripts som kom från Assets Store
 NetworkGameManager
 Lobby - serien (förutom LobbyPlayer) som finns på
