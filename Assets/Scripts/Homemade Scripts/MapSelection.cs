@@ -24,37 +24,34 @@ public class MapSelection : MonoBehaviour
     /// </summary>
     void Update ()
     {
-	    if(OptionSelected.text == "GYM_FORT")
+        switch(OptionSelected.text)
         {
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "HermanGympasal";
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_FORT";
-            MapFolder.sprite = MapImages[0];
-        }
-        if (OptionSelected.text == "GYM_ARENA")
-        {
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "SergejTestGym";
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_ARENA";
-            MapFolder.sprite = MapImages[1];
-        }
-        if (OptionSelected.text == "GYM_BRIDGETOWN")
-        {
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "BridgeTown";
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_BRIDGETOWN";
-            MapFolder.sprite = MapImages[2];
-        }
+            case "GYM_FORT":
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "HermanGympasal";
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_FORT";
+                MapFolder.sprite = MapImages[0];
+                break;
+            case "GYM_ARENA":
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "SergejTestGym";
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_ARENA";
+                MapFolder.sprite = MapImages[1];
+                break;
+            case "GYM_BRIDGETOWN":
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "BridgeTown";
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_BRIDGETOWN";
+                MapFolder.sprite = MapImages[2];
+                break;
+            case "GYM_FLOORISLAVA":
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "TheFloorIsLava";
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_FLOORISLAVA";
+                MapFolder.sprite = MapImages[3];
+                break;
+            case "Bonus_AcrossTheSky":
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "RotateAcrossTheSky";
+                GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "Bonus_AcrossTheSky";
+                MapFolder.sprite = MapImages[4];
+                break;
 
-        if (OptionSelected.text == "GYM_FLOORISLAVA")
-        {
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "TheFloorIsLava";
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "GYM_FLOORISLAVA";
-            MapFolder.sprite = MapImages[3];
-        }
-
-        if (OptionSelected.text == "Bonus_AcrossTheSky")
-        {
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().playScene = "RotateAcrossTheSky";
-            GameObject.Find("LobbyManager").GetComponent<UnityStandardAssets.Network.LobbyManager>().matchMap = "Bonus_AcrossTheSky";
-            MapFolder.sprite = MapImages[4];
         }
     }
 }

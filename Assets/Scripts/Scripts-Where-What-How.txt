@@ -212,26 +212,7 @@ Refererar till:
 Ingent script är refererad. 
 
 
-11 Scriptnamn: SpriteAnimation
-
-
-Vad gör den?                
-Den animerar genom att ändra en sprite beroende på hur mycket frames spelas.
-
-
-Var ligger den?
-./Assets/Scripts/Homemade Scripts/
-
-
-Vilket objekt ligger den på?
-Den ligger på sin egen gameObeject
-
-
-Refererar till:
-Ingent script är refererad. 
-
-
-12 Scriptnamn: RotateTheRings
+11 Scriptnamn: RotateTheRings
 
 
 Vad gör den?                
@@ -250,7 +231,7 @@ Refererar till:
 Ingent script är refererad. 
 
 
-13 Scriptnamn: NetworkCharacterInfo
+12 Scriptnamn: NetworkCharacterInfo
 
 
 Vad gör den?
@@ -269,7 +250,7 @@ Refererar till:
 Inget script är refererad. 
 
 
-Scriptnamn: SpawnOnServer
+13 Scriptnamn: SpawnOnServer
 
 
 Vad gör den?                
@@ -286,7 +267,9 @@ Ligger bl.a. på Ballspawner.
 
 Refererar till:
 Inget
-Scriptnamn: SpawnBall
+
+
+14 Scriptnamn: SpawnBall
 
 
 Vad gör den?                
@@ -305,7 +288,7 @@ Refererar till:
 Inget
 
 
-Scriptnamn: AnimateMovement
+15 Scriptnamn: AnimateMovement
 
 
 Vad gör den?
@@ -324,7 +307,7 @@ Refererar till:
 FirstPersonController
 
 
-Scriptnamn: PlayeNetworkBehaviour
+16 Scriptnamn: PlayeNetworkBehaviour
 
 
 Vad gör den?
@@ -343,7 +326,7 @@ Refererar till:
 GrabAndToss
 
 
-Scriptnamn: LobbyPlayer
+17 Scriptnamn: LobbyPlayer
 (Från Assets Store och har redigerats)
 
 
@@ -363,7 +346,7 @@ LobbyPlayerList
 LobbyManager
 
 
-Scriptnamn: FloorisLavaScript
+18 Scriptnamn: FloorisLavaScript
 
 
 Vad gör den?                
@@ -382,7 +365,7 @@ FirstPersonController
 PlayerInfo
 
 
-Scriptnamn: VideoController
+19 Scriptnamn: VideoController
 
 Vad gör den?                
 Spelar upp Movietexture and laddar upp den nästa scene då Movetexture är över
