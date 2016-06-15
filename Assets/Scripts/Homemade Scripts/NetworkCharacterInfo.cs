@@ -25,22 +25,14 @@ public class NetworkCharacterInfo : NetworkBehaviour
     public int checkingPlayers;
 
     public GameObject[] ChoosenMaterials;
-    public List<GameObject> Team1;
-    public List<GameObject> Team2;
-    public List<GameObject> Team3;
-    public List<GameObject> Team4;
-    public List<GameObject> Team5;
-    public List<GameObject> Team6;
-    public List<GameObject> Team7;
-    public List<GameObject> Team8;
-    public List<GameObject> Team9;
-    public List<GameObject> Team10;
     [SerializeField]
     private GameObject Victory;
     [SerializeField]
     private GameObject Draw;
     [SerializeField]
     private List<GameObject> TeamPlayers;
+    [SerializeField]
+    private List<int> PlayerNumber;
 
     public NetworkLobbyHook NLH;
     public UnityStandardAssets.Network.LobbyManager LM;
@@ -64,16 +56,6 @@ public class NetworkCharacterInfo : NetworkBehaviour
 	/// </summary>
     void Awake()
     {
-        Team1 = new List<GameObject>();
-        Team2 = new List<GameObject>();
-        Team3 = new List<GameObject>();
-        Team4 = new List<GameObject>();
-        Team5 = new List<GameObject>();
-        Team6 = new List<GameObject>();
-        Team7 = new List<GameObject>();
-        Team8 = new List<GameObject>();
-        Team9 = new List<GameObject>();
-        Team10 = new List<GameObject>();
         TeamPlayers = new List<GameObject>();
     }
 
@@ -107,7 +89,7 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 else
                 {
                     TeamPlayers.Add(NewPlayer);
-                    CheckAvailablePlayers();
+                    CheckAvailablePlayers(NewPlayer);
                     checkingPlayers--;
                 }
             }
@@ -147,79 +129,12 @@ public class NetworkCharacterInfo : NetworkBehaviour
 	/// Adding player from TeamPLayers list to a sepret list based on his teamNumber
 	/// </summary>
 	/// <param name="GnT">The Player GameObject</param>
-    public  void CheckAvailablePlayers()
+    public  void CheckAvailablePlayers(GameObject GnT)
     {
-        foreach (GameObject GnT in TeamPlayers)
-        {
-            Debug.Log("Passed here again");
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 1)
-            {
-                if(!Team1.Contains(GnT))
-                { Team1.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color; }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 2)
-            {
-                if (!Team2.Contains(GnT))
-                { Team2.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color; }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 3)
-            {
-                if (!Team3.Contains(GnT))
-                { Team3.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color; }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 4)
-            {
-                if (!Team4.Contains(GnT))
-                { Team4.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 5)
-            {
-                if (!Team5.Contains(GnT))
-                { Team5.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 6)
-            {
-                if (!Team6.Contains(GnT))
-                { Team6.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 7)
-            {
-                if (!Team7.Contains(GnT))
-                { Team7.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 8)
-            {
-                if (!Team8.Contains(GnT))
-                { Team8.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 9)
-            {
-                if (!Team9.Contains(GnT))
-                { Team9.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-            if (GnT.GetComponent<NetworkCharacterInfo>().teamNumber == 10)
-            {
-                if (!Team10.Contains(GnT))
-                { Team10.Add(GnT); GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
-                    GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
-                }
-            }
-        }
+        Debug.Log("Passed here again");
+        GnT.GetComponent<NetworkCharacterInfo>().Cmd_SpawnColors();
+        GnT.GetComponent<PlayerInfo>().playersColor = GnT.GetComponent<NetworkCharacterInfo>().color;
+        PlayerNumber[(GnT.GetComponent<NetworkCharacterInfo>().teamNumber - 1)]++;
     }
 
 	/// <summary>
@@ -231,46 +146,8 @@ public class NetworkCharacterInfo : NetworkBehaviour
     {
         Debug.Log("isc_Dead name is " + isc_Dead);
         Debug.Log("isc_Dead team is" + isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber);
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 1)
-        {
-            Team1.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 2)
-        {
-            Team2.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 3)
-        {
-            Team3.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 4)
-        {
-            Team4.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 5)
-        {
-            Team5.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 6)
-        {
-            Team6.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 7)
-        {
-            Team7.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 8)
-        {
-            Team8.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 9)
-        {
-            Team9.Remove(isc_Dead);
-        }
-        if (isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber == 10)
-        {
-            Team10.Remove(isc_Dead);
-        }
+        TeamPlayers.Remove(isc_Dead);
+        PlayerNumber[(isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber - 1)]--;     
         isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber = 0;
         CheckforTeamStatus();
     }
@@ -283,11 +160,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
     private void CheckforTeamStatus()
     {
         Debug.Log("Here I go again on my own");
-        if (Team1.Count != 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-            Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] != 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+            PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 1");
-            foreach (GameObject Winners in Team1)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -296,11 +173,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count != 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] != 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 2");
-            foreach (GameObject Winners in Team2)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -309,11 +186,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count != 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] != 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 3");
-            foreach (GameObject Winners in Team3)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -322,11 +199,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count != 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] != 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 4");
-            foreach (GameObject Winners in Team4)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -335,11 +212,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count != 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] != 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 5");
-            foreach (GameObject Winners in Team5)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -348,11 +225,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count != 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] != 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 6");
-            foreach (GameObject Winners in Team6)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -361,11 +238,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count != 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] != 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 7");
-            foreach (GameObject Winners in Team7)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -374,11 +251,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count != 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] != 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 8");
-            foreach (GameObject Winners in Team8)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -387,11 +264,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count != 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] != 0 && PlayerNumber[9] == 0)
         {
             Debug.Log("Victory for team 9");
-            foreach (GameObject Winners in Team9)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -400,11 +277,11 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-          Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count != 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+          PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] != 0)
         {
             Debug.Log("Victory for team 10");
-            foreach (GameObject Winners in Team10)
+            foreach (GameObject Winners in TeamPlayers)
             {
                 Winners.GetComponent<NetworkCharacterInfo>().Victory.SetActive(true);
                 Winners.GetComponent<NetworkCharacterInfo>().PlaySound(0);
@@ -413,8 +290,8 @@ public class NetworkCharacterInfo : NetworkBehaviour
                 Winners.GetComponent<NetworkCharacterInfo>().StartCoroutine(NLH.GoBacktoLobby(10f));
             }
         }
-        if (Team1.Count == 0 && Team2.Count == 0 && Team3.Count == 0 && Team4.Count == 0 && Team5.Count == 0 &&
-         Team6.Count == 0 && Team7.Count == 0 && Team8.Count == 0 && Team9.Count == 0 && Team10.Count == 0)
+        if (PlayerNumber[0] == 0 && PlayerNumber[1] == 0 && PlayerNumber[2] == 0 && PlayerNumber[3] == 0 && PlayerNumber[4] == 0 &&
+         PlayerNumber[5] == 0 && PlayerNumber[6] == 0 && PlayerNumber[7] == 0 && PlayerNumber[8] == 0 && PlayerNumber[9] == 0)
         {
             foreach (GameObject Draw in TeamPlayers)
             {

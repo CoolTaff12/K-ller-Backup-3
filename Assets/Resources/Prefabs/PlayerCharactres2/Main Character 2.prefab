@@ -1570,7 +1570,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.46348834, z: -1.1098709}
+  m_LocalPosition: {x: 49.078884, y: 10.613305, z: 33.244434}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2105,19 +2105,10 @@ MonoBehaviour:
   - {fileID: 186278}
   - {fileID: 134096}
   - {fileID: 189540}
-  Team1: []
-  Team2: []
-  Team3: []
-  Team4: []
-  Team5: []
-  Team6: []
-  Team7: []
-  Team8: []
-  Team9: []
-  Team10: []
   Victory: {fileID: 118332}
   Draw: {fileID: 175840}
   TeamPlayers: []
+  PlayerNumber: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   NLH: {fileID: 0}
   LM: {fileID: 0}
   audioClips:
@@ -2442,7 +2433,6 @@ MonoBehaviour:
   flySpeed: 4
   killable: 1
   dead: 0
-  mat: {fileID: 2800000, guid: f9cb50346a8027f40a0fe456ed3267b5, type: 3}
   audioClips:
   - {fileID: 0}
   - {fileID: 0}
