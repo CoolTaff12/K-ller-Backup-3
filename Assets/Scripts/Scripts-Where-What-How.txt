@@ -36,7 +36,7 @@ Vid Update kollar den
 
 
 Var ligger den?
-./Assets/Scripts/
+./Assets/Scripts/Homemade Scripts/
 
 
 Refererar till:
@@ -55,7 +55,7 @@ Tillåter spelaren att plocka upp bollen med tangent “E” och kasta bollen me
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -79,7 +79,7 @@ Tillhandahåller spelarens värden såsom spelarens “health” och vad som hä
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -105,7 +105,7 @@ Skapades för att ändra spelarens värden på servern men ersattes till mestade
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -125,7 +125,7 @@ Styr hur Dodgeball beter sig. Styr vad som händer med själva bollen när spela
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -145,7 +145,7 @@ Detta sattes som lågprio eftersom det var viktigare att fixa sync problem så a
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -163,7 +163,7 @@ Styr de objekt som skjuter ut raycasts åt parkour scriptet.
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -201,7 +201,7 @@ Den tar varenda objekt som hamnar på den och skickar den transform position til
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -220,11 +220,11 @@ Den animerar genom att ändra en sprite beroende på hur mycket frames spelas.
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
-Den ligger
+Den ligger på sin egen gameObeject
 
 
 Refererar till:
@@ -239,7 +239,7 @@ Den roterar objektet
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -258,7 +258,7 @@ Den
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -277,7 +277,7 @@ Instantierar och spawnar en angiven prefab på servern.
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -294,7 +294,7 @@ Spawnar en angiven prefab varje gång ett objekt taggat som “Player” rör si
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -313,7 +313,7 @@ Spelar upp en viss animation när spelaren gör någonting. De aktuella animatio
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -332,7 +332,7 @@ Ser till att spelarobjektet endast använder sig av sitt egna script genom att a
 
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -352,7 +352,7 @@ Denna kod tar emot och ger ut värden samt färger från spelarnas val i PlayerI
 
 
 Var ligger den?
-./Assets/Scripts/
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -370,7 +370,7 @@ Vad gör den?
 Den dödar spelaren när spelaren hamnar i dens Collider
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
@@ -388,7 +388,7 @@ Vad gör den?
 Spelar upp Movietexture and laddar upp den nästa scene då Movetexture är över
 
 Var ligger den?
-./Assets/Scripts
+./Assets/Scripts/Homemade Scripts/
 
 
 Vilket objekt ligger den på?
