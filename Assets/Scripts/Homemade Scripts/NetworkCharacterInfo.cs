@@ -144,12 +144,16 @@ public class NetworkCharacterInfo : NetworkBehaviour
 	/// <param name="isc_Dead">The Player GameObject</param>
     public void CheckingList(GameObject isc_Dead)
     {
-        Debug.Log("isc_Dead name is " + isc_Dead);
-        Debug.Log("isc_Dead team is" + isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber);
-        TeamPlayers.Remove(isc_Dead);
-        PlayerNumber[(isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber - 1)]--;     
-        isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber = 0;
-        CheckforTeamStatus();
+        if (TeamPlayers.Contains(isc_Dead))
+        {
+            Debug.Log("isc_Dead name is " + isc_Dead);
+            Debug.Log("isc_Dead team is " + isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber);
+            PlayerNumber[(isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber - 1)]--;
+            isc_Dead.GetComponent<NetworkCharacterInfo>().teamNumber = 0;
+            CheckforTeamStatus();
+            TeamPlayers.Remove(isc_Dead);
+        }
+            
     }
 
 	/// <summary>
