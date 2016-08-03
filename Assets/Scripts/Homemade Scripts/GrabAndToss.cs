@@ -97,7 +97,6 @@ public class GrabAndToss : NetworkBehaviour
 				anim.SetBool ("isThrowing", true);
 			} 
 			holdingBall = false;
-			StartCoroutine(StartThrow(0.5F));
 			Cmd_Shoot (currentBall, tossForce);
 			currentBall = null;
 			ballScript = null;
@@ -129,14 +128,5 @@ public class GrabAndToss : NetworkBehaviour
 	void Cmd_GetPickedUp(GameObject bs, GameObject go){
 		ballScript = bs.GetComponent<DodgeBallBehaviour> ();
 		ballScript.Rpc_GetPickedUp (go);
-	}
-	/// <summary>
-	/// timer that lets the animation run a bit before proceeding.
-	/// </summary>
-	/// <returns></returns>
-	/// <param name="waitTime">Time to wait before proceeding</param>
-	IEnumerator StartThrow(float waitTime) 
-	{
-		yield return new WaitForSeconds(waitTime);
 	}
 }
