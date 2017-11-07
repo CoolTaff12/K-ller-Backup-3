@@ -183,8 +183,8 @@ namespace UnityStandardAssets.Network
             PlayersOnline = new List<GameObject>();
             UnityStandardAssets.Characters.FirstPerson.MouseLook NewMouseLock = new UnityStandardAssets.Characters.FirstPerson.MouseLook();
             NewMouseLock.lockCursor = false;
-            transform.FindChild("TopPanel").GetComponent<LobbyTopPanel>().isInGame = false;
-            transform.FindChild("TopPanel").GetComponent<LobbyTopPanel>().ToggleVisibility(true);
+            transform.Find("TopPanel").GetComponent<LobbyTopPanel>().isInGame = false;
+            transform.Find("TopPanel").GetComponent<LobbyTopPanel>().ToggleVisibility(true);
             backDelegate();
         }
 
